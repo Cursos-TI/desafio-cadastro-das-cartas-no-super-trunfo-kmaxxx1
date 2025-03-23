@@ -15,6 +15,8 @@ int main()
     int pontos1;
     float densidade1;
     float pibpercapita1;
+    float superpoder1;
+    float inverso1;
 
    
     printf("PRIMEIRA CARTA\n\n");
@@ -44,6 +46,9 @@ int main()
 
     densidade1 = populacao1 / area1;
     pibpercapita1 = pib1 / populacao1;
+    inverso1 = 1.0 / densidade1;
+
+    superpoder1 = (populacao1 + area1 + pib1 + pontos1 + inverso1 + pibpercapita1)/6;
 
     
     
@@ -57,7 +62,8 @@ int main()
     printf("PIB: %.2f\n", pib1);
     printf("Pontos turisticos: %d\n", pontos1);
     printf("Densidade: %.2f\n", densidade1);
-    printf("PIB per capita: %.2f\n\n", pibpercapita1);
+    printf("PIB per capita: %.2f\n", pibpercapita1);
+    printf("Superpoder: %.2f\n\n", superpoder1);
 
 
   
@@ -72,6 +78,9 @@ int main()
     int pontos2;
     float densidade2;
     float pibpercapita2;
+    float superpoder2;
+    float inverso2;
+    
 
 
     printf("SEGUNDA CARTA\n\n");
@@ -100,6 +109,10 @@ int main()
 
     densidade2 = populacao2 / area2;
     pibpercapita2 = pib2 / populacao2;
+
+    inverso2 = 1.0 / densidade2;
+
+    superpoder2 = (populacao2 + area2 + pib2 + pontos2 + inverso2 + pibpercapita2)/6;
     
     printf("\n--- Dados da Segunda Carta ---\n");
 
@@ -112,7 +125,28 @@ int main()
     printf("Pontos turisticos: %d\n", pontos2);
     printf("Densidade: %.2f\n", densidade2);
     printf("PIB per capita: %.2f\n", pibpercapita2);
+    printf("Superpoder: %.2f\n\n", superpoder2);
 
+    printf("\n--- Comparativo de cartas ---\n");
 
+    int resultado1, resultado2, resultado3, resultado4, resultado5, resultado6, resultado7;
+
+    resultado1 = populacao1 > populacao2;
+    resultado2 = area1 > area2;
+    resultado3 = pib1 > pib2;
+    resultado4 = pontos1 > pontos2;
+    resultado5 = inverso1 > inverso2;
+    resultado6 = pibpercapita1 > pibpercapita2;
+    resultado7 = superpoder1 > superpoder2;
+
+    printf("Populacao: %d > %d? %d\n", populacao1, populacao2, resultado1);
+    printf("Area: %.2f > %.2f? %d\n", area1, area2, resultado2);
+    printf("PIB: %.2f > %.2f? %d\n", pib1, pib2, resultado3);
+    printf("Pontos turisticos: %d > %d? %d\n", pontos1, pontos2, resultado4);
+    printf("Densidade: %.2f > %.2f? %d\n", inverso1, inverso2, resultado5);
+    printf("PIB per capita: %.2f > %.2f? %d\n", pibpercapita1, pibpercapita2, resultado6);
+    printf("Superpoder: %.2f > %.2f? %d\n\n", superpoder1, superpoder2, resultado7);
+
+    
     return 0;
 }
